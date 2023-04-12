@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/KeepAccount-master/app/src/main/res/layout/add_fragment.xml" value="0.20052083333333334" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/drawable/edit_background.xml" value="0.17291666666666666" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.26979166666666665" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/activity_chart.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/activity_medal.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/activity_select_date.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/activity_time_set.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/add_fragment.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/index_fragment.xml" value="0.2526041666666667" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/item_item.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/list_item.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/record_bar.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/record_item_list.xml" value="0.25364583333333335" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/layout/user_fragment.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/KeepAccount/app/src/main/res/menu/menu.xml" value="0.225" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

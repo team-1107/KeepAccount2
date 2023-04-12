@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">KeepAccount</string>
+    <string name="menu_index">Index</string>
+    <string name="menu_add">Add</string>
+    <string name="menu_user">User</string>
+    <string name="no_data_todaylist">No record for this day</string>
+    <string name="select_date_text">Please select date:</string>
+    <string name="submit_btn">OK</string>
+    <string name="dialog_title">Tip</string>
+    <string name="delete_dialog_message">Delete the record ?</string>
+    <string name="yes_text">Yes</string>
+    <string name="no_text">No</string>
+
+    <string name="goal_title_s">Goal Setting</string>
+    <string name="revenue_goal_s">Revenue Goal :</string>
+    <string name="spending_limit_s">Spending Limit :</string>
+    <string name="saving_goal_s">Saving Goal :</string>
+    <string name="continuous_day_s">Continuous Days</string>
+    <string name="last_billing_s">Time of Last Billing</string>
+    <string name="badge_title_s">My Badges</string>
+    <string name="graph_title_s">My Graphs</string>
+
+    <string name="back">Back</string>
+    <string name="savebadge">Medal of Saving--Achieve savings goals</string>
+    <string name="spendbadge">Medal of Spendings--Achieve spendings goals</string>
+    <string name="earnbadge">Medal of Revenue - Achieve revenue goals</string>
+    <string name="signbadge">Medal of Sign-in - Achieve continuous bookkeeping goals</string>
+
+    <string name="cancel">Cancel</string>
+    <string name="income">Income</string>
+    <string name="outcome">Outcome</string>
+    <string name="finish">Finish</string>
+    <string name="yuan">Yuan</string>
+    <string name="note">Note(140 characters Max)</string>
+    <string name="no_money_tip">Please input the amount</string>
+    <string name="no_tag_tip">Please select the tag</string>
+    <string name="MyGraph">My Graph</string>
+    <string name="selectDate">Select Date</string>
+    <string name="MyMedal">My Medal</string>
+
+
+</resources>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">记账Always</string>
+    <string name="menu_index">首页</string>
+    <string name="menu_add">添加</string>
+    <string name="menu_user">我的</string>
+    <string name="no_data_todaylist">本日没有记账记录哦</string>
+    <string name="select_date_text">请选择日期：</string>
+    <string name="submit_btn">确认</string>
+    <string name="dialog_title">提示</string>
+    <string name="delete_dialog_message">确定删除记录？</string>
+    <string name="yes_text">是</string>
+    <string name="no_text">否</string>
+
+    <string name="goal_title_s">目标设定</string>
+    <string name="revenue_goal_s">收入目标 ：</string>
+    <string name="spending_limit_s">支出限度 ：</string>
+    <string name="saving_goal_s">攒钱目标 ：</string>
+    <string name="continuous_day_s">"连续记账 "</string>
+    <string name="last_billing_s">上次记账</string>
+    <string name="badge_title_s">我的徽章</string>
+    <string name="graph_title_s">我的图表</string>
+
+    <string name="back">返回</string>
+    <string name="savebadge">攒钱勋章——达成攒钱目标</string>
+    <string name="spendbadge">支出勋章——达成支出限制目标</string>
+    <string name="earnbadge">收入勋章——达成收入目标</string>
+    <string name="signbadge">签到勋章——达成连续记账目标</string>
+
+    <string name="cancel">取消</string>
+    <string name="income">收入</string>
+    <string name="outcome">支出</string>
+    <string name="finish">完成</string>
+    <string name="yuan">元</string>
+    <string name="note">备注（最多140个字）</string>
+    <string name="no_money_tip">请输入金额</string>
+    <string name="no_tag_tip">请选择标签</string>
+    <string name="MyGraph">我的图表</string>
+    <string name="selectDate">选择时间</string>
+    <string name="MyMedal">我的勋章</string>
+</resources>

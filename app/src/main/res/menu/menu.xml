@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/menu_index"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:id="@+id/indexFragment"/>
+    <item android:title="@string/menu_add"
+        android:icon="@drawable/ic_baseline_add_circle_outline_24"
+        android:id="@+id/addFragment"/>
+    <item android:title="@string/menu_user"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:id="@+id/userFragment"/>
+</menu>
