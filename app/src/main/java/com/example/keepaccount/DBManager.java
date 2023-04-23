@@ -89,18 +89,43 @@ public class DBManager {
     }
 
     @SuppressLint("Range")
-    public ArrayList<Item> listByTag(){
+    public ArrayList<Item> listByType(){
         ArrayList<Item> recordList = null;
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String sql = "select sum(money) as total, tag from "+TBNAME+" GROUP BY tag";
+        String sql = "select sum(money) as total,count(tag) as count,tag from "+TBNAME+" GROUP BY tag Order by total desc";
         Cursor cursor = db.rawQuery(sql,null);
-        //TODO: edit db
         if(cursor!=null){
             recordList = new ArrayList<Item>();
             while(cursor.moveToNext()){
                 Item item = new Item();
-                Log.i(TAG,cursor.getString(cursor.getColumnIndex("total")));
-                item.setMoney(cursor.getString(cursor.getColumnIndex("total")));
+                String  total = cursor.getString(cursor.getColumnIndex("total"));
+                String tag = cursor.getString(cursor.getColumnIndex("tag"));
+                String count = cursor.getString(cursor.getColumnIndex("count"));
+                Log.i(TAG,tag+":"+total);
+                item.setMoney(total);
+                item.setTag(tag);
+                item.setCount(count);
+                recordList.add(item);
+            }
+            cursor.close();
+        }
+        db.close();
+        sortItemList(recordList);
+        return recordList;
+
+    }
+
+    @SuppressLint("Range")
+    public ArrayList<Item> totalByTag(){
+        ArrayList<Item> recordList = null;
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        String sql = "select sum(money) as total,tag from "+TBNAME+" group by tag";
+        Cursor cursor = db.rawQuery(sql,null);
+        if(cursor!=null){
+            recordList = new ArrayList<Item>();
+            while(cursor.moveToNext()){
+                Item item = new Item();
+                item.setMoney((cursor.getString(cursor.getColumnIndex("total"))));
                 item.setTag(cursor.getString(cursor.getColumnIndex("tag")));
                 recordList.add(item);
             }

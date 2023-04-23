@@ -7,19 +7,53 @@
     tools:context=".ChartActivity">
 
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <lecho.lib.hellocharts.view.PieChartView
-            android:id="@+id/pieChart"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|center_horizontal|center_vertical"
+                android:orientation="horizontal">
+
+                <lecho.lib.hellocharts.view.PieChartView
+                    android:id="@+id/Chart"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp" />
+
+                <ListView
+                    android:id="@+id/overview"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:divider="@null"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="100dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/nodata_chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="You have no income record!"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <ListView
+                android:id="@+id/list_chart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@android:color/white"
+                android:dividerHeight="7dp">
+
+            </ListView>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

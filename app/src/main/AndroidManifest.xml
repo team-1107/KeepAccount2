@@ -12,19 +12,19 @@
         <activity
             android:name=".TimeSet"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.Dialog"/>
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity
             android:name=".MedalActivity"
             android:exported="true"
-            android:label="@string/MyMedal"/>
+            android:label="@string/MyMedal" />
         <activity
             android:name=".ChartActivity"
             android:exported="true"
-            android:label="@string/MyGraph"/>
+            android:label="@string/MyGraph" />
         <activity
             android:name=".SelectDateActivity"
             android:exported="true"
-            android:label="@string/selectDate"/>
+            android:label="@string/selectDate" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

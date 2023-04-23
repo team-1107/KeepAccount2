@@ -19,7 +19,6 @@ public class MyAdapter extends ArrayAdapter {
     public MyAdapter(Context context, int resource, ArrayList<Item> list){
         super(context, resource, list);
     }
-
     @NonNull
     @Override
     public View getView(int position, @NonNull View convertView, @NonNull ViewGroup parent){

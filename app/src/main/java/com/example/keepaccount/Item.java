@@ -8,7 +8,9 @@ public class Item {
     private String detail;
     private String tag;
     private String type;
-
+    private Integer color;
+    private String count;
+    private String percent;
     public Item() {
         super();
         date = "";
@@ -17,6 +19,9 @@ public class Item {
         detail = "";
         tag = "";
         type = "";
+        percent = "";
+        color = 0;
+        count = "";
     }
 
     public Item(String date, String time, String money, String detail, String tag, String type) {
@@ -85,5 +90,13 @@ public class Item {
         this.type = type;
     }
 
+    public void setPercent(String percent){this.percent = percent;}
+
+    public String getPercent(){ return percent;}
+
+    public void setColor(Integer Color){this.color = Color;}
+    public Integer getColor(){return color;}
+    public void setCount(String Count){this.count = Count;}
+    public String getCount(){return count;}
 
 }

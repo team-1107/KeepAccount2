@@ -1,0 +1,145 @@
+package com.example.keepaccount;
+
+import static java.lang.Float.parseFloat;
+
+import android.graphics.Color;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import lecho.lib.hellocharts.model.PieChartData;
+import lecho.lib.hellocharts.model.SliceValue;
+import lecho.lib.hellocharts.view.PieChartView;
+
+public class ChartAc_backup extends AppCompatActivity {
+    private PieChartView outChart;
+    private PieChartView inChart;
+
+    private static final String TAG = "ChartActivity";
+    private DBManager dbManager;
+    private ArrayList<Item> outcomeListItem;
+    private ArrayList<Item> incomeListItem;
+    private TextView noOutcome;
+    private TextView noIncome;
+    private ListView outcomeList;
+    private ListView incomeList;
+    private chartAdapter outcomeAdapter;
+    private chartAdapter incomeAdapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_chart);
+        //返回
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        Log.i(TAG,"show chart");
+        outcomeListItem = getData("outcome");
+        incomeListItem = getData("income");
+        initPie();
+        initChartList();
+    }
+    private void initPie(){
+        outChart = (PieChartView)findViewById(R.id.Chart);
+        inChart = (PieChartView)findViewById(R.id.incomeChart);
+        if(outcomeListItem.isEmpty()){
+            outChart.setVisibility(View.GONE);
+        }else{
+            outChart.setVisibility(View.VISIBLE);
+            setChart(outcomeListItem,"outcome",outChart);
+        }
+        if(incomeListItem.isEmpty()){
+            inChart.setVisibility(View.GONE);
+        }else{
+            inChart.setVisibility(View.VISIBLE);
+            setChart(incomeListItem,"outcome",inChart);
+        }
+
+
+    }
+
+    private void setPie(PieChartData data, boolean label, boolean center){
+        data.setHasLabels(label);
+        data.setHasCenterCircle(center);
+    }
+
+    private List<Integer> setColor(){
+        final List<Integer> colorData = new ArrayList<>();
+        colorData.add(Color.parseColor("#85B74F"));
+        colorData.add(Color.parseColor("#039BDB"));
+        colorData.add(Color.parseColor("#FF00B8"));
+        colorData.add(Color.parseColor("#9569F8"));
+        colorData.add(Color.parseColor("#F87C67"));
+        colorData.add(Color.parseColor("#F1DA3D"));
+        colorData.add(Color.parseColor("#87EA39"));
+        colorData.add(Color.parseColor("#48AEFA"));
+        colorData.add(Color.parseColor("#4E5052"));
+        colorData.add(Color.parseColor("#D36458"));
+        return colorData;
+    }
+
+    private ArrayList<Item> getData(String Type){
+        ArrayList<Item> list;
+        dbManager = new DBManager(getApplicationContext());
+        float sum=0;
+        list = dbManager.listByType(Type);
+        for(Item item:list){
+            sum+=parseFloat(item.getMoney());
+        }
+        for(Item item:list){
+            float percent = parseFloat(item.getMoney())/sum;
+            item.setPercent(percent);
+        }
+        Log.i(TAG,"Get data"+list.size());
+        return list;
+    }
+    private void setChart(ArrayList<Item> itemList, String Type, PieChartView pie){
+        List<SliceValue> Values = new ArrayList<SliceValue>();
+        List<Integer> Color = setColor();
+        int i=0;
+        for(Item item : itemList){
+            SliceValue slice = new SliceValue(parseFloat(item.getMoney()),Color.get(i));
+            i=i+1;
+            Log.i(TAG,item.getTag()+item.getMoney()+item.getType());
+            Values.add(slice);
+        }
+        PieChartData Data = new PieChartData(Values);
+        setPie(Data,true,true);
+        pie.setPieChartData(Data);
+    }
+
+    private void initChartList(){
+        outcomeList = (ListView)findViewById(R.id.list_chart);
+        incomeList = (ListView) findViewById(R.id.incomeList);
+        noOutcome = (TextView)findViewById(R.id.noOutComeText);
+        noIncome = (TextView)findViewById(R.id.nodata_chart);
+        setChartList(outcomeList,noOutcome,outcomeAdapter,outcomeListItem);
+        setChartList(incomeList,noIncome,incomeAdapter,incomeListItem);
+    }
+    private void setChartList(ListView list, TextView noData,chartAdapter adapter,ArrayList<Item> listItem){
+        adapter = new chartAdapter(this,R.layout.chart_item,listItem);
+
+        Log.i(TAG,"chart list size"+listItem.size());
+        list.setAdapter(adapter);
+        list.setEmptyView(noData);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == android.R.id.home){
+            finish();
+            return true;
+        }
+        super.onOptionsItemSelected(item);
+        return true;
+    }
+
+}
